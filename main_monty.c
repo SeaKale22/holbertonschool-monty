@@ -7,8 +7,28 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+	char *line = NULL;
+	size_t len = 0;
+	unsigned int line_number = 0;
+	FILE *monty_file;
+
+	if (argc != 2) /*checks if argc is two */
 	{
 		fprintf(stderr, "Useage: %s <file>\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
+	monty_file = fopen(argv[1], "r"); /*opens and reads from the file*/
+	if (!monty_file) /*fopen failed*/
+	{
+		fprintf(stderr, "Error: Cannot open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	/*read each line from monty file*/
+	while (getline(&line, &len, monty_file) != -1)
+	{
+		line_number++;
+		/*Tokenize the line to extract opconde and arguments*/
+		char *opcode = strtok(line, " \t\n");
+		if (!opcode) /*empty line, skip*/
+			continue;
+
