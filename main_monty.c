@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * main- a file intepreter for monty
  * @argc: arg count, should be 2
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
 	size_t len = 0;
 	unsigned int line_number = 0;
 	FILE *monty_file;
+	stack_t *stack = NULL;
 
 	if (argc != 2) /*checks if argc is two */
 	{
@@ -31,4 +33,9 @@ int main(int argc, char *argv[])
 		char *opcode = strtok(line, " \t\n");
 		if (!opcode) /*empty line, skip*/
 			continue;
-
+		execute_opcode(&stack, opcode, line_number);
+	}
+	/*clean up */
+	free_stack(stack);
+	return (EXIT_SUCCESS);
+}
