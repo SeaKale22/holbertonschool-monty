@@ -7,7 +7,7 @@
  */
 void op_push(stack_t **stack, unsigned int line_number)
 {
-	/*read intager from bytecode and push it unto the stack*/
+
 }
 
 /**
