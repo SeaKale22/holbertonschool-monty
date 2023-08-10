@@ -13,8 +13,8 @@ void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 		{"pint", op_pint},
 		{"pop", op_pop},
 		{"swap", op_swap},
-		{"add",op_add},
-		{"nop",op_nop},
+		{"add", op_add},
+		{"nop", op_nop},
 	};
 
 	int num_opcodes = sizeof(opcodes) / sizeof(opcodes[0]);
