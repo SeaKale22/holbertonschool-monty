@@ -30,12 +30,14 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		/*Tokenize the line to extract opconde and arguments*/
-		char *opcode = strtok(line, " \t\n");
+		char *opcode = strtok(line, DELIMS);
 		if (!opcode) /*empty line, skip*/
 			continue;
 		execute_opcode(&stack, opcode, line_number);
 	}
 	/*clean up */
+	fclose(monty_file);
+	free(line);
 	free_stack(stack);
 	return (EXIT_SUCCESS);
 }

@@ -11,7 +11,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	int push_value;
 	stack_t *new_node;
 
-	argument = strtok(NULL, " \t\n"); /*get argument after push opcode*/
+	argument = strtok(NULL, DELIMS); /*get argument after push opcode*/
 	if (!argument)
 	{
 		fprintf(stderr, "L%d: useage: push integer\n", line_number);
