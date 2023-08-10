@@ -10,6 +10,7 @@ void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 	instruction_t opcodes[] = {
 		{"push", op_push},
 		{"pall", op_pall},
+		{"pint", op_pint},
 	};
 
 	int num_opcodes = sizeof(opcodes) / sizeof(opcodes[0]);

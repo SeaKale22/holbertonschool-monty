@@ -43,6 +43,7 @@ void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number);
 void free_stack(stack_t *stack);
+void op_pint(stack_t **stack, unsigned int line_number);
 bool is_valid_int(const char *str);
 
 #endif
