@@ -6,6 +6,8 @@
  */
 bool is_valid_int(const char *str)
 {
+	if (*str == '+' || *str == '-')
+		str++;
 	if (*str == '\0')
 		return (false);
 	while (*str)

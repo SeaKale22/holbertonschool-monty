@@ -4,7 +4,7 @@
  * main- a file intepreter for monty
  * @argc: arg count, should be 2
  * @argv: arg vector
- * Return: always 
+ * Return: always
  */
 int main(int argc, char *argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	monty_file = fopen(argv[1], "r"); /*opens and reads from the file*/
 	if (!monty_file) /*fopen failed*/
 	{
-		fprintf(stderr, "Error: Cannot open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	/*read each line from monty file*/
@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		/*Tokenize the line to extract opconde and arguments*/
 		char *opcode = strtok(line, DELIMS);
+
 		if (!opcode) /*empty line, skip*/
 			continue;
 		execute_opcode(&stack, opcode, line_number);
