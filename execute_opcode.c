@@ -11,6 +11,7 @@ void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 		{"push", op_push},
 		{"pall", op_pall},
 		{"pint", op_pint},
+		{"pop", op_pop},
 	};
 
 	int num_opcodes = sizeof(opcodes) / sizeof(opcodes[0]);
