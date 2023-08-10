@@ -12,9 +12,9 @@ void op_push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 
 	argument = strtok(NULL, DELIMS); /*get argument after push opcode*/
-	if (!argument)
+	if (!argument || !is_valid_int(argument))
 	{
-		fprintf(stderr, "L%d: useage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	push_value = atoi(argument); /*convert argument to int*/

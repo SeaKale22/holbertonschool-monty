@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
 
 #define DELIMS "\n \r\t$"
 
@@ -41,5 +43,6 @@ void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number);
 void free_stack(stack_t *stack);
+bool is_valid_int(const char *str);
 
 #endif
